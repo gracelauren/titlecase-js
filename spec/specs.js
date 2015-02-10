@@ -26,9 +26,13 @@ describe("titleCase", function() {
   });
 
 
-    it('does will capitalize the words "a, an, the, and, but, for, nor, of" if they are at the beginning or end of a phrase', function() {
-      expect(titleCase("a story called for")).to.equal('A Story Called For');
-    });
+  it('does will capitalize the words "a, an, the, and, but, for, nor, of" if they are at the beginning or end of a phrase', function() {
+    expect(titleCase("a story called for")).to.equal('A Story Called For');
+  });
+
+  it('will account for hyphenated words', function() {
+    expect(titleCase("a story called for")).to.equal('A Story Called For');
+  });
 
 
 });

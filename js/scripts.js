@@ -21,8 +21,20 @@ var titleCase = function(phrase) {
     newPhrase = newPhrase + word + " ";
 
     });
-debugger;
 
   newPhrase = newPhrase.slice(0, newPhrase.length - 1);
   return newPhrase;
 };
+
+$(document).ready(function() {
+  $("form#titlecase").submit(function(event) {
+    var phrase = ($("input#phrase").val());
+    var result = titleCase(phrase);
+
+    $(".phrase").text(result);
+
+
+    $("#result").show();
+    event.preventDefault();
+  });
+});

@@ -27,6 +27,13 @@ var titleCase = function(phrase) {
 };
 
 $(document).ready(function() {
+  $('#fancy-inputs input[type="text"]').blur(function(){
+    if($(this).val().length > 0){
+      $(this).addClass('white');
+    } else {
+      $(this).removeClass('white');
+    }
+  });
   $("form#titlecase").submit(function(event) {
     var phrase = ($("input#phrase").val());
     var result = titleCase(phrase);
